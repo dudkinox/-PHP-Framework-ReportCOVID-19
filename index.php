@@ -1,3 +1,6 @@
+<?php
+// session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -19,6 +22,8 @@
   <link rel="stylesheet" href="assets/css/argon.css?v=1.2.0" type="text/css">
   <!-- create -->
   <link rel="stylesheet" href="Themes/main.css">
+  <!-- create js -->
+  <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -30,9 +35,10 @@
   <div class="main-content" id="panel">
     <div class="container-fluid mt--6">
       <div class="row">
-        <?php include 'component/Report_Covid.php'; ?>
+        <?php include 'component/Alert.php'; ?>
         <?php
         if ($page == "profile") {
+          include 'component/Report_Covid.php';
           include 'Profile/Profile.php';
         } else {
           include 'component/content.php';

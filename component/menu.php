@@ -79,10 +79,7 @@
                         </a>
                     </li>
                 </ul>
-                <!-- Divider -->
                 <hr class="my-3">
-                <!-- Heading -->
-
             </div>
         </div>
     </div>

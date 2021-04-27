@@ -406,7 +406,7 @@
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-username">วันที่เริ่มป่วย(วัน/เดือน/ปี)</label>
+                        <label class="form-control-label">วันที่เริ่มป่วย(วัน/เดือน/ปี)</label>
                         <input type="date" id="datemax" name="datemax" max="2021-12-31">
                       </div>
                     </div>
@@ -420,26 +420,26 @@
                       <br>
                       <div class="form-group">
                         <label class="form-control-label">ชื่อสถานพยาบาลเข้ารับการรักษาครั้งแรก</label>
-                        <input type="email" id="input-email" class="form-control" placeholder="ชื่อ สถานพยาบาล">
+                        <input type="email" id="firsttime" class="form-control" placeholder="ชื่อ สถานพยาบาล">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <br>
                       <div class="form-group">
                         <label class="form-control-label">จังหวัด</label>
-                        <input type="email" id="input-email" class="form-control" placeholder="จังหวัด">
+                        <input type="email" id="county" class="form-control" placeholder="จังหวัด">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label">ชื่อสถานพยาบาลเข้ารับการรักษาในปัจจุบัน</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="ชื่อสถานพยาบาลในปัจจุบัน">
+                        <input type="text" id="instant" class="form-control" placeholder="ชื่อสถานพยาบาลในปัจจุบัน">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label">จังหวัด</label>
-                        <input type="text" class="form-control" placeholder="จังหวัด">
+                        <input type="text" class="county_instant" placeholder="จังหวัด">
                       </div>
                     </div>
                   </div>
@@ -454,13 +454,13 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label">อุณหภูมิแรกรับ</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="°C">
+                        <input type="text" id="temperature" class="form-control" placeholder="°C">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label">O<sub>2</sub> Sat</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="%">
+                        <input type="text" id="sat" class="form-control" placeholder="%">
                       </div>
                     </div>
                     <div class="col-lg-3">
@@ -548,7 +548,7 @@
                     </div>
                     <div class="col-lg-12">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-email">เอกซเรย์ปอด(ครั้งแรก)</label>
+                        <label class="form-control-label">เอกซเรย์ปอด(ครั้งแรก)</label>
                       </div>
                     </div>
                     <div class="col-lg-12">
@@ -585,26 +585,26 @@
                       <div class="form-group">
                         <br>
                         <label class="form-control-label">ผล Hd</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="g/dL">
+                        <input type="text" id="hd" class="form-control" placeholder="g/dL">
                       </div>
                     </div>
 
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label">Hct</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="%">
+                        <input type="text" id="Hct" class="form-control" placeholder="%">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label">Platelet count</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="x10*3">
+                        <input type="text" id="Platelet" class="form-control" placeholder="x10*3">
                       </div>
                     </div>
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label">WBC</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="%">
+                        <input type="text" id="WBC" class="form-control" placeholder="%">
                       </div>
                     </div>
 
@@ -612,7 +612,7 @@
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label">ผลการตรวจ Influenzatest วิธีการตรวจ</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="%">
+                        <input type="text" id="Influen" class="form-control" placeholder="%">
                       </div>
                     </div>
                     <div class="col-lg-6">
@@ -684,46 +684,46 @@
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">การให้ยารักษาโรคติดเชื้อไวรัสโคโรนา2019</label>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="hai" id="inlineRadio1" value="option1">
-                          <label class="form-check-label" for="inlineRadio1">ไม่ให้</label>
+                          <input class="form-check-input" type="radio" name="hai" id="heal" value="option1">
+                          <label class="form-check-label" for="heal">ไม่ให้</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="hai" id="inlineRadio2" value="option2">
-                          <label class="form-check-label" for="inlineRadio2">ให้วันที่รับยาโดสแรก </label>
+                          <input class="form-check-input" type="radio" name="hai" id="Received" value="option2">
+                          <label class="form-check-label" for="Received">ให้วันที่รับยาโดสแรก </label>
                         </div>
 
                         <input type="date" id="datemax" name="datemax" max="2021-12-31">
                         <br>
                         <br>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1">
-                          <label class="form-check-label" for="inlineRadio3">Remdesivir</label>
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Remdesivir" value="option1">
+                          <label class="form-check-label" for="Remdesivir">Remdesivir</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option1">
-                          <label class="form-check-label" for="inlineRadio4">Favipiravir</label>
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Favipiravir" value="option1">
+                          <label class="form-check-label" for="Favipiravir">Favipiravir</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option1">
-                          <label class="form-check-label" for="inlineRadio5">Lopinavir/ritonavir</label>
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Lopinavir" value="option1">
+                          <label class="form-check-label" for="Lopinavir">Lopinavir/ritonavir</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option1">
-                          <label class="form-check-label" for="inlineRadio6">Ritonavir</label>
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Ritonavir" value="option1">
+                          <label class="form-check-label" for="Ritonavir">Ritonavir</label>
                         </div></br>
                         <br>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option1">
-                          <label class="form-check-label" for="inlineRadio7">Darunavir</label>
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Darunavir" value="option1">
+                          <label class="form-check-label" for="Darunavir">Darunavir</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="option1">
-                          <label class="form-check-label" for="inlineRadio8">Chloroquine/Hydroxychloroquine</label>
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Chloroquine" value="option1">
+                          <label class="form-check-label" for="Chloroquine">Chloroquine/Hydroxychloroquine</label>
                         </div></br>
                         <br>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9" value="option1">
-                          <label class="form-check-label" for="inlineRadio9">อื่นๆระบุ</label>
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="other" value="option1">
+                          <label class="form-check-label" for="other">อื่นๆระบุ</label>
                         </div></br>
                         <div class="col-lg-10">
                           <input type="text" class="form-control" placeholder="อื่นๆ">
