@@ -40,8 +40,38 @@
         if ($page == "profile") {
           include 'component/Report_Covid.php';
           include 'Profile/Profile.php';
-        } else {
+        } else if ($page == "dashboard") {
           include 'component/content.php';
+        } else if ($page == "clinic") {
+          include 'component/Report_Covid.php';
+          include 'Clinic/Clinic.php';
+        } else if ($page == "clinicPCR") {
+          include 'component/Report_Covid.php';
+          include 'component/content.php';
+        } else if ($page == "clinicAntibody") {
+          // include 'component/Report_Covid.php';
+          // include 'ClinicAntibody/ClinicAntibody.php';
+        } else if ($page == "vaccine") {
+          // include 'component/Report_Covid.php';
+          // include 'component/content.php';
+        } else if ($page == "history") {
+          // include 'component/Report_Covid.php';
+          // include 'component/content.php';
+        } else if ($page == "details") {
+          // include 'component/Report_Covid.php';
+          // include 'component/content.php';
+        } else if ($page == "search") {
+          // include 'component/Report_Covid.php';
+          // include 'component/content.php';
+        } else if ($page == "login") {
+          // include 'component/Report_Covid.php';
+          // include 'component/content.php';
+        } else if ($page == "register") {
+          // include 'component/Report_Covid.php';
+          // include 'component/content.php';
+        } else {
+          // include 'component/Report_Covid.php';
+          // include 'component/content.php';
         }
         ?>
         <!-- Footer -->
