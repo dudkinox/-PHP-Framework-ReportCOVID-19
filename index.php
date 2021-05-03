@@ -33,6 +33,7 @@
   <?php $page = isset($_GET["page"]) ? $_GET["page"] : ''; ?>
   <!-- Main content -->
   <div class="main-content" id="panel">
+    <?php include 'component/head.php'; ?>
     <div class="container-fluid mt--6">
       <div class="row">
         <?php include 'component/Alert.php'; ?>
@@ -71,12 +72,13 @@
           // include 'component/content.php';
         } else {
           // include 'component/Report_Covid.php';
-          // include 'component/content.php';
+          include 'component/content.php';
         }
         ?>
         <!-- Footer -->
-        <?php include 'component/Footer.php'; ?>
       </div>
+      <?php include 'component/Footer.php';
+      ?>
     </div>
   </div>
 
