@@ -4,14 +4,11 @@ require("../../database/connection.php");
 $api = isset($_GET["api"]) ? $_GET["api"] : '';
 if ($api == "search") {
 } else if ($api == "genaral") {
-    $sCode = $_POST['code'];
+    $sCode = $_POST['Code'];
     $sId_card = $_POST['ID_card'];
-    $sAge_year = $_POST['Age_year'];
-    $sAge_month = $_POST['Age_month'];
-    $sNationality = $_POST['nationality'];
+    $sRefer = $_POST['Refer'];
     $sName = $_POST['Name'];
     $sLname = $_POST['LName'];
-    $sCareer = $_POST['Career'];
     $sSex = $_POST['sex'];
     if ($sSex == "Male") {
         $sMale = 1;
@@ -20,77 +17,36 @@ if ($api == "search") {
         $sMale = 0;
         $sFemale = 1;
     }
-    $sSpregnant = $_POST['Spregnant'];
-    if ($sSpregnant == "No") {
-        $sNo_pregnant = 1;
-        $sPregnant = 0;
-    } else {
-        $sNo_pregnant = 0;
-        $sPregnant = 1;
-    }
-    $sPregnantNO = $_POST['pregnantNO'] ?? 0;
-
-    $sMountOfPre = $_POST['MountOfPre'] ?? 0;
-    $sWork_Edu = $_POST['Work_Edu'];
+    $sAge_year = $_POST['Age_year'];
+    $sAge_month = $_POST['Age_month'];
+    $sNationality = $_POST['Nationality'];
+    $sCareer = $_POST['Career'];
     $sPhoneNo = $_POST['PhoneNo'];
-    $sMochana_Phone = $_POST['Mochana_Phone'];
     $sH_number = $_POST['H_number'];
-
     $sMoo = $_POST['Moo'];
     $sVillage = $_POST['Village'];
-    $sSide_road  = $_POST['Side_road'];
-
-    $sProvince = $_POST['Province'];
-    $sPostalcode = $_POST['postalcode'];
-    $sDistrict = $_POST['District'];
-    $sAmphur = $_POST['Amphur'];
     $sRoad = $_POST['Road'];
-    $sType_house = $_POST['type_house'];
-    if ($sType_house == "House") {
-        $sHouse = 1;
-        $sOtherAdd = 0;
-    } else {
-        $sHouse = 0;
-        $sOtherAdd = 1;
-    }
-
-    $sDiseases = $_POST['Diseases'];
-
-    $sType_smoke = $_POST['type_smoke'];
-    if ($sType_smoke == "No_smoking") {
-        $sNo_Smoke = 1;
-        $sSmoke = 0;
-        $sStop_smoke = 0;
-    } else if ($sType_smoke == "Smoke") {
-        $sNo_Smoke = 0;
-        $sSmoke = 1;
-        $sStop_smoke = 0;
-    } else {
-        $sNo_Smoke = 0;
-        $sSmoke = 0;
-        $sStop_smoke = 1;
-    }
-
+    $sSide_road  = $_POST['Side_road'];
+    $sProvince = $_POST['Province'];
+    $sAmphur = $_POST['Amphur'];
+    $sDistrict = $_POST['District'];
+    $sPostalcode = $_POST['Postalcode'];
+    $sCure = $_POST['Cure'];
+    $sLocation_admit = $_POST['Location_admit'];
+    $sDate_admit = $_POST['Date_admit'];
+    $sDate_report = $_POST["Date_report"];
     $general_data = "INSERT INTO General_Data
                 (
                 Code,
                 ID_card,
                 Name,
-                LName, 
+                LName,
                 Career,
-                Work_Edu,
                 PhoneNo,
-                Mochana_Phone,
                 Age_year,
                 Age_month,
                 Male,
                 Female,
-                No_pregnant,
-                pregnant,
-                pregnantNO,
-                MountOfPre,
-                House,
-                OtherAdd,
                 H_number,
                 Moo, 
                 Village,
@@ -100,29 +56,23 @@ if ($api == "search") {
                 Amphur,
                 Province,
                 Postalcode,
-                Diseases,
-                No_Smoke,
-                Smoke,
-                Stop_smoke
+                Refer,
+                Date_report,
+                Date_admit,
+                Nationality,
+                Cure,
+                Location_admit
                 )
     VALUE ('" . $sCode . "'
     ,'" . $sId_card . "'
     ,'" . $sName . "'
     ,'" . $sLname . "'
     ,'" . $sCareer . "'
-    ,'" . $sWork_Edu . "'
     ,'" . $sPhoneNo . "'
-    ,'" . $sMochana_Phone . "'
     ,'" . $sAge_year . "'
     ,'" . $sAge_month . "'
     ,'" . $sMale . "'
     ,'" . $sFemale . "'
-    ,'" . $sNo_pregnant . "'
-    ,'" . $sPregnant . "'
-    ,'" . $sPregnantNO . "'
-    ,'" . $sMountOfPre . "'
-    ,'" . $sHouse . "'
-    ,'" . $sOtherAdd . "'
     ,'" . $sH_number . "'
     ,'" . $sMoo . "'
     ,'" . $sVillage . "'
@@ -132,10 +82,13 @@ if ($api == "search") {
     ,'" . $sAmphur . "'
     ,'" . $sProvince . "'
     ,'" . $sPostalcode . "'
-    ,'" . $sDiseases . "'
-    ,'" . $sNo_Smoke . "'
-    ,'" . $sSmoke . "'
-    ,'" . $sStop_smoke . "')";
+    ,'" . $sRefer . "'
+    ,'" . $sDate_report . "'
+    ,'" . $sDate_admit . "'
+    ,'" . $sNationality . "'
+    ,'" . $sCure . "'
+    ,'" . $sLocation_admit . "'
+    )";
 
     $Activity_After_14 = "INSERT INTO `Activity_After_14`(`Code`, `AA14_Order`, `AA14_Date`, `AA14_Activity`, `AA14_Number`) 
                             VALUES ('" . $sCode . "','[value-2]','[value-3]','[value-4]','[value-5]')";
@@ -178,8 +131,6 @@ if ($api == "search") {
 
     $X_ray = "INSERT INTO `X-ray`(`Code`, `Xrey_No`, `Xrey_Yes`, `Xrey_Date`, `Xrey_Result`) 
                             VALUES ('" . $sCode . "','[value-2]','[value-3]','[value-4]','[value-5]')";
-
-
 
     if ($conn->query($general_data) === TRUE) {
         if ($conn->query($Activity_After_14) === TRUE) {

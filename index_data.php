@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,8 +29,11 @@
 <body>
 
   <!-- Sidenav -->
-  <?php include 'component/menu.php'; ?>
-  <?php $page = isset($_GET["page"]) ? $_GET["page"] : ''; ?>
+  <?php include 'component/menu_home.php'; ?>
+  <?php
+  $page = isset($_GET["page"]) ? $_GET["page"] : '';
+  $code = $_SESSION["code"];
+  ?>
   <!-- Main content -->
   <div class="main-content" id="panel">
     <?php include 'component/head.php'; ?>
@@ -39,7 +42,7 @@
         <?php include 'component/Alert.php'; ?>
         <?php
         if ($page == "profile") {
-          // include 'component/Report_Covid.php';
+          include 'component/Report_Covid.php';
           include 'Profile/Profile.php';
         } else if ($page == "dashboard") {
           include 'component/content.php';
@@ -93,10 +96,6 @@
   <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
   <script src="assets/js/argon.js?v=1.2.0"></script>
-  <!-- ajax -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- script php -->
-  <?php include('Api_provinces/script.php'); ?>
 </body>
 
 </html>

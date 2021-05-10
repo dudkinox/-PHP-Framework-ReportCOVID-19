@@ -1,8 +1,12 @@
 /* primary */
 .bg-primary {
-    background-color: #30d88f !important;
+  background-color: #30d88f !important;
 }
 
 .bg-primary1 {
-    background-color: #059bff !important;
+  background-color: #059bff !important;
+}
+
+.navbar-vertical.navbar-expand-xs .navbar-nav > .nav-item > .nav-link.active {
+  background: #059bff !important;
 }
